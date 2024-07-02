@@ -1,0 +1,1186 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>How to Improve The Models &#8212; Learnosity  Automated Student Assessment Assesment</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'improve_the_models';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Questions and References" href="questions_and_references.html" />
+    <link rel="prev" title="Human Vs Model Grades Comparison" href="human_score_vs_model_compare.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/learnosity_logo.png" class="logo__image only-light" alt="Learnosity  Automated Student Assessment Assesment - Home"/>
+    <script>document.write(`<img src="_static/learnosity_logo.png" class="logo__image only-dark" alt="Learnosity  Automated Student Assessment Assesment - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Learnosity Automated Student Assessment Assement
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="human_score_vs_model_compare.html">Human Vs Model Grades Comparison</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">How to Improve The Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="questions_and_references.html">Questions and References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fimprove_the_models.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/improve_the_models.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>How to Improve The Models</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-research">From the Research</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-results">Summary of Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepping-the-data">Prepping The Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#essayscoringmodel-class">EssayScoringModel Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-data-for-bert-model">Preparing Data for BERT Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model">Training the Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-model">Loading the Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-evaluation-results">Model Evaluation Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="how-to-improve-the-models">
+<h1>How to Improve The Models<a class="headerlink" href="#how-to-improve-the-models" title="Link to this heading">#</a></h1>
+<p>In this section, we will focus on predicting the total score rather than the individual traits from the rubric. The reasons for this approach are:</p>
+<ul class="simple">
+<li><p><strong>Time Limitations</strong></p></li>
+<li><p><strong>Data Limitations</strong>: The data does not indicate which trait score maps to specific rubric criteria, such as style and conventions (grammar). For example, conventions might be better handled by a separate model due to its more objective nature.</p></li>
+</ul>
+<p>Based on the available information, it is unclear how the models were initially built. What we do know is that neither model performed particularly well concerning the Quadratic Weighted Kappa (QWK) metric. Model 1 had a QWK score of 0.336, and Model 2 had a score of 0.344. While these scores indicate some degree of agreement, they fall short of demonstrating robust alignment with human raters. This presents an opportunity to improve these models’ performance.</p>
+<section id="from-the-research">
+<h2>From the Research<a class="headerlink" href="#from-the-research" title="Link to this heading">#</a></h2>
+<p>After initial research into this problem, I identified three potential ways to improve automated assessment scoring:</p>
+<ol class="arabic simple">
+<li><p><strong>Feature Extraction Methods</strong>: The models may be using older feature extraction methods, such as bag of words. In a comparative study by Ramesh &amp; Sanampudi (2022), it was found that models using pre-trained word embeddings like Word2Vec and Glove as part of their classification, regression, or LSTM-based models performed better in terms of QWK scores.</p></li>
+<li><p><strong>Large Language Models (LLMs)</strong>: Recent literature discusses LLMs for assessment scoring. While they did not outperform state-of-the-art models in pure assessment scoring (Mansour et al., 2024), they show promise in providing feedback to students and excel at grading objective assessments, such as those in science (Impey et al., 2024).</p></li>
+<li><p><strong>Fine-Tuning Pre-trained Language Models</strong>: Fine-tuning a pre-trained language model such as BERT has shown extraordinary abilities in representation and generalization (Yang et al., 2020).</p></li>
+</ol>
+<p>The most promising option is to apply transfer learning to a pre-trained BERT model and fine-tune it using the given data, which is outlined in the rest of this notebook.</p>
+</section>
+<section id="summary-of-results">
+<h2>Summary of Results<a class="headerlink" href="#summary-of-results" title="Link to this heading">#</a></h2>
+<p>The fine-tuned BERT model was evaluated with a QWK score of 0.79, which is a significant improvement over the previous models. This high level of agreement suggests that the model’s predictions are close to the actual scores.</p>
+<p>However, in Yang et al. (2020), a R2BERT model (BERT with Regression and Ranking) achieved a QWK score of 0.84 on the same dataset. Considering the rapid advancements in this field, it is likely that newer models have achieved even better scores.</p>
+</section>
+<section id="prepping-the-data">
+<h2>Prepping The Data<a class="headerlink" href="#prepping-the-data" title="Link to this heading">#</a></h2>
+<p>Follow the same method as the previous notebook.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Path to the CSV file</span>
+<span class="n">essay_path</span> <span class="o">=</span> <span class="s1">&#39;essay-7-all.csv&#39;</span>
+<span class="n">results_3_path</span> <span class="o">=</span> <span class="s1">&#39;results-3.csv&#39;</span>
+<span class="n">results_4_path</span> <span class="o">=</span> <span class="s1">&#39;results-4.csv&#39;</span>
+
+<span class="c1"># Reading the CSV file into a DataFrame</span>
+<span class="n">essay_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">essay_path</span><span class="p">)</span>
+<span class="n">results_3_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">results_3_path</span><span class="p">)</span>
+<span class="n">results_4_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">results_4_path</span><span class="p">)</span>
+
+<span class="c1"># Removing columns where all values are null</span>
+<span class="n">essay_df</span> <span class="o">=</span> <span class="n">essay_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">results_3_df</span> <span class="o">=</span> <span class="n">results_3_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">results_4_df</span> <span class="o">=</span> <span class="n">results_4_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Remove the error records from both datasets</span>
+<span class="c1"># Filtering out rows where &#39;error_count&#39; is greater than 0</span>
+<span class="n">results_3_df</span> <span class="o">=</span> <span class="n">results_3_df</span><span class="p">[</span><span class="n">results_3_df</span><span class="p">[</span><span class="s1">&#39;error_count&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">results_4_df</span> <span class="o">=</span> <span class="n">results_4_df</span><span class="p">[</span><span class="n">results_4_df</span><span class="p">[</span><span class="s1">&#39;error_count&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Checking the uniqueness of essay_id in each dataframe</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">essay_df</span><span class="p">[</span><span class="s1">&#39;essay_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">essay_df</span><span class="p">)</span> <span class="ow">and</span>
+    <span class="n">results_3_df</span><span class="p">[</span><span class="s1">&#39;essay_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">results_3_df</span><span class="p">)</span> <span class="ow">and</span>
+    <span class="n">results_4_df</span><span class="p">[</span><span class="s1">&#39;essay_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">results_4_df</span><span class="p">)):</span>
+
+    <span class="c1"># Selecting and renaming the necessary columns from essay_df, and making a copy</span>
+    <span class="n">essay_columns</span> <span class="o">=</span> <span class="n">essay_df</span><span class="p">[[</span><span class="s1">&#39;essay_id&#39;</span><span class="p">,</span> <span class="s1">&#39;essay&#39;</span><span class="p">,</span> <span class="s1">&#39;rater1_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;rater1_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;rater1_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;rater1_trait4&#39;</span><span class="p">,</span> <span class="s1">&#39;rater1_domain1&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait4&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_domain1&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">essay_columns</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;rater1_domain1&#39;</span><span class="p">:</span> <span class="s1">&#39;rater1_total&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_domain1&#39;</span><span class="p">:</span> <span class="s1">&#39;rater2_total&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Selecting, renaming, and calculating the total score for results_3_df, and making a copy</span>
+    <span class="n">results_3_columns</span> <span class="o">=</span> <span class="n">results_3_df</span><span class="p">[[</span><span class="s1">&#39;essay_id&#39;</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait4&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">results_3_columns</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;model_1_name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait1&#39;</span><span class="p">:</span> <span class="s1">&#39;model_1_trait1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait2&#39;</span><span class="p">:</span> <span class="s1">&#39;model_1_trait2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait3&#39;</span><span class="p">:</span> <span class="s1">&#39;model_1_trait3&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait4&#39;</span><span class="p">:</span> <span class="s1">&#39;model_1_trait4&#39;</span>
+    <span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">results_3_columns</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results_3_columns</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;model_1_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;model_1_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;model_1_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;model_1_trait4&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Selecting, renaming, and calculating the total score for results_4_df, and making a copy</span>
+    <span class="n">results_4_columns</span> <span class="o">=</span> <span class="n">results_4_df</span><span class="p">[[</span><span class="s1">&#39;essay_id&#39;</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait4&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">results_4_columns</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;model_2_name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait1&#39;</span><span class="p">:</span> <span class="s1">&#39;model_2_trait1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait2&#39;</span><span class="p">:</span> <span class="s1">&#39;model_2_trait2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait3&#39;</span><span class="p">:</span> <span class="s1">&#39;model_2_trait3&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait4&#39;</span><span class="p">:</span> <span class="s1">&#39;model_2_trait4&#39;</span>
+    <span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">results_4_columns</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results_4_columns</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;model_2_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;model_2_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;model_2_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;model_2_trait4&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Merging the DataFrames on &#39;essay_id&#39;</span>
+    <span class="n">merged_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">essay_columns</span><span class="p">,</span> <span class="n">results_3_columns</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;essay_id&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">merged_df</span><span class="p">,</span> <span class="n">results_4_columns</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;essay_id&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Remove all rows with any missing values</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data integrity check failed: duplicate essay_id found in one or more DataFrames.&quot;</span><span class="p">)</span>
+
+
+
+<span class="c1"># Calculate the whole number average of human rater scores for each trait and create new columns</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;rater1_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait1&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;rater1_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait2&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;rater1_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait3&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait4&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;rater1_trait4&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait4&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Calculate the overall whole number average score combining all traits from both raters</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;rater1_total&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_total&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+
+<span class="c1"># Note on scoring:</span>
+<span class="c1"># This approach of averaging and rounding might still favor the higher marker, especially noticeable with only two raters.</span>
+<span class="c1"># Ideally, having an odd number of raters, such as three, could help mitigate this bias, as it allows for a median value that might better represent a consensus score.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of the combined DataFrame:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape of the combined DataFrame: (1542, 29)
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p><strong>EssayDataset Class</strong>:</p>
+<ul class="simple">
+<li><p>Manages essays and their scores.</p></li>
+<li><p>Provides methods to get the number of essays and to retrieve a specific essay and its score.</p></li>
+</ul>
+</li>
+<li><p><strong>collate_batch Function</strong>:</p>
+<ul class="simple">
+<li><p>Prepares a batch of essays and scores for training.</p></li>
+<li><p>Pads essays to the same length and converts scores to tensors.</p></li>
+<li><p>Returns the processed batch for use in model training.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch.nn.utils.rnn</span> <span class="kn">import</span> <span class="n">pad_sequence</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">Dataset</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="k">class</span> <span class="nc">EssayDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">essays</span><span class="p">,</span> <span class="n">scores</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">essays</span> <span class="o">=</span> <span class="n">essays</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scores</span> <span class="o">=</span> <span class="n">scores</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">essays</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="c1"># Make sure essays are already tokenized and converted into tensors here</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">essays</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">collate_batch</span><span class="p">(</span><span class="n">batch</span><span class="p">):</span>
+    <span class="n">essay_tensors</span><span class="p">,</span> <span class="n">scores</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">batch</span><span class="p">)</span>
+    <span class="n">essays_padded</span> <span class="o">=</span> <span class="n">pad_sequence</span><span class="p">(</span><span class="n">essay_tensors</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">padding_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">scores_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>  <span class="c1"># Ensure scores are correctly formatted as tensors</span>
+    <span class="k">return</span> <span class="n">essays_padded</span><span class="p">,</span> <span class="n">scores_tensor</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="essayscoringmodel-class">
+<h2>EssayScoringModel Class<a class="headerlink" href="#essayscoringmodel-class" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Initializes with a pre-trained BERT model and a regression layer.</p></li>
+<li><p>Implements a forward method to pass input through BERT and then through the regression layer to output a score.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">BertModel</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+
+<span class="k">class</span> <span class="nc">EssayScoringModel</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">EssayScoringModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bert</span> <span class="o">=</span> <span class="n">BertModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;bert-base-uncased&#39;</span><span class="p">)</span>  <span class="c1"># Load pre-trained BERT</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">regressor</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">768</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># A regression layer: BERT&#39;s hidden size to 1 output</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">,</span> <span class="n">attention_mask</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Forward pass through BERT and the regressor</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bert</span><span class="p">(</span><span class="n">input_ids</span><span class="o">=</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">attention_mask</span><span class="o">=</span><span class="n">attention_mask</span><span class="p">)</span>
+        <span class="n">pooled_output</span> <span class="o">=</span> <span class="n">outputs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Get the pooled output features from BERT</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">regressor</span><span class="p">(</span><span class="n">pooled_output</span><span class="p">)</span>  <span class="c1"># Pass BERT output through the regressor to get the score</span>
+        <span class="k">return</span> <span class="n">score</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/seanmccrossan/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="preparing-data-for-bert-model">
+<h2>Preparing Data for BERT Model<a class="headerlink" href="#preparing-data-for-bert-model" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Tokenization</strong>:</p>
+<ul class="simple">
+<li><p>Load the pre-trained BERT tokenizer and tokenize each essay, adding special tokens and truncating to 512 tokens.</p></li>
+</ul>
+</li>
+<li><p><strong>Train-Test Split</strong>:</p>
+<ul class="simple">
+<li><p>Split the data into training (70%) and testing (30%) datasets based on the calculated size.</p></li>
+</ul>
+</li>
+<li><p><strong>Custom Collate Function</strong>:</p>
+<ul class="simple">
+<li><p>Define a function to prepare batches by padding essays to the same length and converting scores to tensors.</p></li>
+</ul>
+</li>
+<li><p><strong>Data Loaders</strong>:</p>
+<ul class="simple">
+<li><p>Create DataLoader objects for training and testing datasets, using the custom collate function, parallel data loading, and pinned memory for efficiency.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">BertTokenizer</span>
+
+
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">BertTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;bert-base-uncased&#39;</span><span class="p">)</span>
+
+<span class="c1"># Tokenize the essays and convert them to tensors</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokenized_essays&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;essay&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">essay</span><span class="p">:</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">essay</span><span class="p">,</span> <span class="n">add_special_tokens</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">512</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokenized_essays&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokenized_essays&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Determine the size of training data (80% for training, 20% for testing as an example)</span>
+<span class="n">train_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.7</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+
+<span class="c1"># Now, when initializing the dataset, ensure you pass tensors</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">EssayDataset</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokenized_essays&#39;</span><span class="p">][:</span><span class="n">train_size</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_score&#39;</span><span class="p">][:</span><span class="n">train_size</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">EssayDataset</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokenized_essays&#39;</span><span class="p">][</span><span class="n">train_size</span><span class="p">:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_score&#39;</span><span class="p">][</span><span class="n">train_size</span><span class="p">:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+
+<span class="c1"># Define the collate function if not defined</span>
+<span class="k">def</span> <span class="nf">collate_batch</span><span class="p">(</span><span class="n">batch</span><span class="p">):</span>
+    <span class="n">essay_tensors</span><span class="p">,</span> <span class="n">scores</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">batch</span><span class="p">)</span>
+    <span class="n">essays_padded</span> <span class="o">=</span> <span class="n">pad_sequence</span><span class="p">(</span><span class="n">essay_tensors</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">padding_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">essays_padded</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+
+<span class="c1"># Data loaders with the proper collate function</span>
+<span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">collate_fn</span><span class="o">=</span><span class="n">collate_batch</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">test_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">collate_fn</span><span class="o">=</span><span class="n">collate_batch</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="training-the-model">
+<h2>Training the Model<a class="headerlink" href="#training-the-model" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Setup</strong>:</p>
+<ul class="simple">
+<li><p><strong>Device Selection</strong>: Determines whether to use a GPU or CPU for training.</p></li>
+<li><p><strong>Model and Optimizer Initialization</strong>: Loads the essay scoring model and sets up the AdamW optimizer.</p></li>
+<li><p><strong>Loss Function</strong>: Uses Mean Squared Error (MSE) to calculate the difference between predicted and actual scores.</p></li>
+<li><p><strong>Gradient Scaling</strong>: Applies mixed precision training for efficiency.</p></li>
+<li><p><strong>Learning Rate Scheduler</strong>: Gradually decreases the learning rate to improve training stability.</p></li>
+<li><p><strong>Early Stopping Criteria</strong>: Stops training if no significant improvement is seen over a set number of epochs.</p></li>
+</ul>
+</li>
+<li><p><strong>Training Loop</strong>:</p>
+<ul class="simple">
+<li><p>Processes data in batches, making predictions and calculating loss.</p></li>
+<li><p>Updates the model weights periodically to simulate larger batch sizes.</p></li>
+<li><p>Adjusts the learning rate according to the scheduler.</p></li>
+<li><p>Tracks and prints the average loss for each epoch.</p></li>
+</ul>
+</li>
+<li><p><strong>Model Saving and Early Stopping</strong>:</p>
+<ul class="simple">
+<li><p>Saves the model when it shows improved performance.</p></li>
+<li><p>Stops training early if there are multiple epochs without significant loss improvement.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch.optim</span> <span class="kn">import</span> <span class="n">AdamW</span>
+<span class="kn">from</span> <span class="nn">torch.optim.lr_scheduler</span> <span class="kn">import</span> <span class="n">StepLR</span>
+<span class="kn">from</span> <span class="nn">torch.nn</span> <span class="kn">import</span> <span class="n">MSELoss</span>
+<span class="kn">from</span> <span class="nn">torch.cuda.amp</span> <span class="kn">import</span> <span class="n">GradScaler</span><span class="p">,</span> <span class="n">autocast</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">EssayScoringModel</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">AdamW</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>  <span class="c1"># Using AdamW optimizer with a different learning rate</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">MSELoss</span><span class="p">()</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">GradScaler</span><span class="p">()</span>  <span class="c1"># For mixed precision training</span>
+
+<span class="n">scheduler</span> <span class="o">=</span> <span class="n">StepLR</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">step_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># Decays the learning rate of each parameter group by gamma every step_size epochs</span>
+
+<span class="n">best_loss</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+<span class="n">patience</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># Number of epochs to wait for improvement before stopping</span>
+<span class="n">no_improvement_epochs</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">improvement_threshold</span> <span class="o">=</span> <span class="mf">1e-4</span>  <span class="c1"># Minimum change to be considered an improvement</span>
+<span class="n">accumulation_steps</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># List to store the average loss of each epoch</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+    <span class="n">total_loss</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">essays</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
+        <span class="n">essays</span> <span class="o">=</span> <span class="n">essays</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="n">scores</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+
+        <span class="k">with</span> <span class="n">autocast</span><span class="p">():</span>
+            <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">essays</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span> <span class="o">/</span> <span class="n">accumulation_steps</span>
+
+        <span class="n">scaler</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">accumulation_steps</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">scaler</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">optimizer</span><span class="p">)</span>
+            <span class="n">scaler</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+
+        <span class="n">total_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">*</span> <span class="n">accumulation_steps</span>
+
+    <span class="n">avg_loss</span> <span class="o">=</span> <span class="n">total_loss</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_loader</span><span class="p">)</span>
+    <span class="n">losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">avg_loss</span><span class="p">)</span>  <span class="c1"># Append the average loss</span>
+    <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>  <span class="c1"># Adjust the learning rate based on the number of epochs</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s2">, Loss: </span><span class="si">{</span><span class="n">avg_loss</span><span class="si">}</span><span class="s2">, LR: </span><span class="si">{</span><span class="n">scheduler</span><span class="o">.</span><span class="n">get_last_lr</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">avg_loss</span> <span class="o">&lt;</span> <span class="n">best_loss</span> <span class="o">-</span> <span class="n">improvement_threshold</span><span class="p">:</span>
+        <span class="n">best_loss</span> <span class="o">=</span> <span class="n">avg_loss</span>
+        <span class="n">no_improvement_epochs</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="s1">&#39;essay_scoring_model.pth&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saved improved model with loss: </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">best_loss</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">no_improvement_epochs</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">no_improvement_epochs</span> <span class="o">&gt;=</span> <span class="n">patience</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Early stopping triggered after </span><span class="si">{</span><span class="n">epoch</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> epochs&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/seanmccrossan/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/torch/amp/grad_scaler.py:131: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py&quot;, line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File &quot;/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py&quot;, line 126, in _main
+    self = reduction.pickle.load(from_parent)
+AttributeError: Can&#39;t get attribute &#39;EssayDataset&#39; on &lt;module &#39;__main__&#39; (built-in)&gt;
+Traceback (most recent call last):
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py&quot;, line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File &quot;/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py&quot;, line 126, in _main
+    self = reduction.pickle.load(from_parent)
+AttributeError: Can&#39;t get attribute &#39;EssayDataset&#39; on &lt;module &#39;__main__&#39; (built-in)&gt;
+Traceback (most recent call last):
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py&quot;, line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File &quot;/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py&quot;, line 126, in _main
+    self = reduction.pickle.load(from_parent)
+AttributeError: Can&#39;t get attribute &#39;EssayDataset&#39; on &lt;module &#39;__main__&#39; (built-in)&gt;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py&quot;, line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File &quot;/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py&quot;, line 126, in _main
+    self = reduction.pickle.load(from_parent)
+AttributeError: Can&#39;t get attribute &#39;EssayDataset&#39; on &lt;module &#39;__main__&#39; (built-in)&gt;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="nn">File ~/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/torch/utils/data/dataloader.py:1133,</span> in <span class="ni">_MultiProcessingDataLoaderIter._try_get_data</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1133</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_queue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1134</span>     <span class="k">return</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+<span class="nn">File ~/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/queues.py:113,</span> in <span class="ni">Queue.get</span><span class="nt">(self, block, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="n">timeout</span> <span class="o">=</span> <span class="n">deadline</span> <span class="o">-</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">113</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_poll</span><span class="p">(</span><span class="n">timeout</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">raise</span> <span class="n">Empty</span>
+
+<span class="nn">File ~/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/connection.py:262,</span> in <span class="ni">_ConnectionBase.poll</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_readable</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">262</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_poll</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File ~/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/connection.py:429,</span> in <span class="ni">Connection._poll</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span> <span class="k">def</span> <span class="nf">_poll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">429</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">wait</span><span class="p">([</span><span class="bp">self</span><span class="p">],</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span>     <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+<span class="nn">File ~/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/connection.py:936,</span> in <span class="ni">wait</span><span class="nt">(object_list, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">936</span>     <span class="n">ready</span> <span class="o">=</span> <span class="n">selector</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="k">if</span> <span class="n">ready</span><span class="p">:</span>
+
+<span class="nn">File ~/.pyenv/versions/3.10.4/lib/python3.10/selectors.py:416,</span> in <span class="ni">_PollLikeSelector.select</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">415</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">416</span>     <span class="n">fd_event_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selector</span><span class="o">.</span><span class="n">poll</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">417</span> <span class="k">except</span> <span class="ne">InterruptedError</span><span class="p">:</span>
+
+<span class="nn">File ~/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py:66,</span> in <span class="ni">_set_SIGCHLD_handler.&lt;locals&gt;.handler</span><span class="nt">(signum, frame)</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">signum</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span>     <span class="c1"># This following call uses `waitid` with WNOHANG from C side. Therefore,</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span>     <span class="c1"># Python can still get and update the process status successfully.</span>
+<span class="ne">---&gt; </span><span class="mi">66</span>     <span class="n">_error_if_any_worker_fails</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span>     <span class="k">if</span> <span class="n">previous_handler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="ne">RuntimeError</span>: DataLoader worker (pid 9275) exited unexpectedly with exit code 1. Details are lost due to multiprocessing. Rerunning with num_workers=0 may give better error trace.
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">26</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="n">total_loss</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="ne">---&gt; </span><span class="mi">26</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">essays</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>     <span class="n">essays</span> <span class="o">=</span> <span class="n">essays</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>     <span class="n">scores</span> <span class="o">=</span> <span class="n">scores</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+
+<span class="nn">File ~/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/torch/utils/data/dataloader.py:631,</span> in <span class="ni">_BaseDataLoaderIter.__next__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">628</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sampler_iter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">629</span>     <span class="c1"># TODO(https://github.com/pytorch/pytorch/issues/76750)</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>  <span class="c1"># type: ignore[call-arg]</span>
+<span class="ne">--&gt; </span><span class="mi">631</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_data</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">632</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_yielded</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">633</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_kind</span> <span class="o">==</span> <span class="n">_DatasetKind</span><span class="o">.</span><span class="n">Iterable</span> <span class="ow">and</span> \
+<span class="g g-Whitespace">    </span><span class="mi">634</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_IterableDataset_len_called</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> \
+<span class="g g-Whitespace">    </span><span class="mi">635</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_num_yielded</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_IterableDataset_len_called</span><span class="p">:</span>
+
+<span class="nn">File ~/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/torch/utils/data/dataloader.py:1329,</span> in <span class="ni">_MultiProcessingDataLoaderIter._next_data</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1326</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1328</span> <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shutdown</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tasks_outstanding</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="ne">-&gt; </span><span class="mi">1329</span> <span class="n">idx</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_data</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1330</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tasks_outstanding</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">   </span><span class="mi">1331</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_kind</span> <span class="o">==</span> <span class="n">_DatasetKind</span><span class="o">.</span><span class="n">Iterable</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1332</span>     <span class="c1"># Check for _IterableDatasetStopIteration</span>
+
+<span class="nn">File ~/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/torch/utils/data/dataloader.py:1295,</span> in <span class="ni">_MultiProcessingDataLoaderIter._get_data</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1291</span>     <span class="c1"># In this case, `self._data_queue` is a `queue.Queue`,. But we don&#39;t</span>
+<span class="g g-Whitespace">   </span><span class="mi">1292</span>     <span class="c1"># need to call `.task_done()` because we don&#39;t use `.join()`.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1293</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1294</span>     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1295</span>         <span class="n">success</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_try_get_data</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1296</span>         <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1297</span>             <span class="k">return</span> <span class="n">data</span>
+
+<span class="nn">File ~/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/torch/utils/data/dataloader.py:1146,</span> in <span class="ni">_MultiProcessingDataLoaderIter._try_get_data</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1144</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">failed_workers</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1145</span>     <span class="n">pids_str</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">pid</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">failed_workers</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1146</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;DataLoader worker (pid(s) </span><span class="si">{</span><span class="n">pids_str</span><span class="si">}</span><span class="s1">) exited unexpectedly&#39;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1147</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">queue</span><span class="o">.</span><span class="n">Empty</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1148</span>     <span class="k">return</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="ne">RuntimeError</span>: DataLoader worker (pid(s) 9275) exited unexpectedly
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/5b037139545dc4bd6a1f91e1bd5cacbb234be82ea1a1b66033b56c546ff10bd3.png" src="_images/5b037139545dc4bd6a1f91e1bd5cacbb234be82ea1a1b66033b56c546ff10bd3.png" />
+</div>
+</div>
+</section>
+<section id="loading-the-model">
+<h2>Loading the Model<a class="headerlink" href="#loading-the-model" title="Link to this heading">#</a></h2>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">EssayScoringModel</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;essay_scoring_model.pth&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EssayScoringModel(
+  (bert): BertModel(
+    (embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): BertEncoder(
+      (layer): ModuleList(
+        (0-11): 12 x BertLayer(
+          (attention): BertAttention(
+            (self): BertSdpaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (pooler): BertPooler(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (regressor): Linear(in_features=768, out_features=1, bias=True)
+)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_scores</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">actual_scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>  <span class="c1"># Disable gradient computation for inference</span>
+    <span class="k">for</span> <span class="n">essays</span><span class="p">,</span> <span class="n">scores</span> <span class="ow">in</span> <span class="n">test_loader</span><span class="p">:</span>
+        <span class="n">essays</span> <span class="o">=</span> <span class="n">essays</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="n">scores</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">essays</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+        <span class="n">test_scores</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">predictions</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>  <span class="c1"># Store predictions</span>
+        <span class="n">actual_scores</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">scores</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>  <span class="c1"># Store actual scores</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="model-evaluation-results">
+<h2>Model Evaluation Results<a class="headerlink" href="#model-evaluation-results" title="Link to this heading">#</a></h2>
+<p>These results compare the model’s predicted test scores with the actual test scores:</p>
+<ul class="simple">
+<li><p><strong>Mean Squared Error (MSE): 2.02</strong></p>
+<ul>
+<li><p>This value indicates the average squared difference between the predicted and actual scores. A lower MSE signifies better accuracy. In this case, the average squared error is relatively low, suggesting decent prediction performance.</p></li>
+</ul>
+</li>
+<li><p><strong>Mean Absolute Error (MAE): 1.05</strong></p>
+<ul>
+<li><p>This value measures the average absolute difference between the predicted and actual scores. A lower MAE indicates more precise predictions. Here, the average error is about 1 point, which indicates reasonably accurate predictions.</p></li>
+</ul>
+</li>
+<li><p><strong>Root Mean Squared Error (RMSE): 1.42</strong></p>
+<ul>
+<li><p>This metric gives the square root of the average squared differences between predicted and actual scores. It is sensitive to larger errors, indicating that the model’s predictions are, on average, 1.42 points off.</p></li>
+</ul>
+</li>
+<li><p><strong>R-squared Score: 0.60</strong></p>
+<ul>
+<li><p>This metric indicates how well the model’s predictions explain the variability of the actual scores. An R-squared value of 0.60 means that the model explains 60% of the variance in the actual scores, demonstrating a good but not perfect fit.</p></li>
+</ul>
+</li>
+<li><p><strong>Quadratic Weighted Kappa (QWK): 0.79</strong></p>
+<ul>
+<li><p>This metric measures the agreement between the predicted and actual scores while accounting for the agreement occurring by chance. A QWK of 0.79 indicates a high level of agreement, suggesting that the model’s predictions are close to the actual scores.</p></li>
+</ul>
+</li>
+<li><p><strong>Pearson Correlation: 0.79</strong></p>
+<ul>
+<li><p>This value indicates a strong positive linear relationship between the predicted and actual scores. The high correlation, with a very low P-value, suggests that the model’s predictions are highly aligned with the actual scores.</p></li>
+</ul>
+</li>
+<li><p><strong>Spearman Correlation: 0.79</strong></p>
+<ul>
+<li><p>This value measures the rank-order relationship between the predicted and actual scores. A high Spearman correlation, with a very low P-value, indicates that the model’s predictions preserve the order of the actual scores well.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The model shows reasonably accurate predictions with low average errors (MAE of 1.05 and RMSE of 1.42).</p></li>
+<li><p>It explains 60% of the variance in the actual scores, indicating a good fit.</p></li>
+<li><p>The high Quadratic Weighted Kappa (0.79) suggests strong agreement with actual scores.</p></li>
+<li><p>Both Pearson (0.79) and Spearman (0.79) correlations indicate a strong alignment between predicted and actual scores.</p></li>
+</ul>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Squared Error: 2.0215983390808105
+Mean Absolute Error: 1.0539957284927368
+R-squared Score: 0.5987868262558772
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/250e346a6918bb1ba917a2f663d5da182cddf783830602a5215a045c557e5a64.png" src="_images/250e346a6918bb1ba917a2f663d5da182cddf783830602a5215a045c557e5a64.png" />
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/e18f788b31cbeb2f50e1c27085e7eb6de1e94be3f1f2bfc7f9021690d817fd87.png" src="_images/e18f788b31cbeb2f50e1c27085e7eb6de1e94be3f1f2bfc7f9021690d817fd87.png" />
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quadratic Weighted Kappa: 0.7878355275912512
+Pearson Correlation: 0.7915250425184396, P-value: 1.2040074218729757e-100
+Spearman Correlation: 0.7862093631407931, P-value: 2.0255296217693547e-98
+Mean Absolute Error: 1.0539957284927368
+Root Mean Squared Error: 1.4218292236328125
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="human_score_vs_model_compare.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Human Vs Model Grades Comparison</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="questions_and_references.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Questions and References</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-research">From the Research</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-results">Summary of Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepping-the-data">Prepping The Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#essayscoringmodel-class">EssayScoringModel Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-data-for-bert-model">Preparing Data for BERT Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model">Training the Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-model">Loading the Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-evaluation-results">Model Evaluation Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sean McCrossan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

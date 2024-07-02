@@ -1,0 +1,1528 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Human Vs Model Grades Comparison &#8212; Learnosity  Automated Student Assessment Assesment</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'human_score_vs_model_compare';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to Improve The Models" href="improve_the_models.html" />
+    <link rel="prev" title="Learnosity Automated Student Assessment Assement" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/learnosity_logo.png" class="logo__image only-light" alt="Learnosity  Automated Student Assessment Assesment - Home"/>
+    <script>document.write(`<img src="_static/learnosity_logo.png" class="logo__image only-dark" alt="Learnosity  Automated Student Assessment Assesment - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Learnosity Automated Student Assessment Assement
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Human Vs Model Grades Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="improve_the_models.html">How to Improve The Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="questions_and_references.html">Questions and References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhuman_score_vs_model_compare.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/human_score_vs_model_compare.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Human Vs Model Grades Comparison</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-plan">Analysis plan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">Import the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-prep-and-eda">Data Prep and EDA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-combined-data-frame">Create Combined Data Frame.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#human-raters-consistency-analysis">Human Raters Consistency Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-findings">Key Findings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-metrics">Correlation Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-weighted-kappa">Quadratic Weighted Kappa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-analysis">Visual Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-scores-consistency-analysis">Model Scores Consistency Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Objective</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Key Findings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Correlation Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Visual Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-human-rated-scores-versus-model-scores">Comparing Human-Rated Scores Versus Model Scores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Analysis Plan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Objective</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-of-model-1-performance-against-human-scores">Evaluation of Model 1 Performance Against Human Scores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-metrics">Error Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-analysis">Correlation Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-weighted-kappa-analysis">Quadratic Weighted Kappa Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-of-model-2-performance-against-human-scores">Evaluation of Model 2 Performance Against Human Scores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Error Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Correlation Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Quadratic Weighted Kappa Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-analysis-of-model-1-and-model-2-performance">Comparative Analysis of Model 1 and Model 2 Performance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-metrics-comparison">Error Metrics Comparison</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Correlation Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-weighted-kappa-qwk-analysis">Quadratic Weighted Kappa (QWK) Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="human-vs-model-grades-comparison">
+<h1>Human Vs Model Grades Comparison<a class="headerlink" href="#human-vs-model-grades-comparison" title="Link to this heading">#</a></h1>
+<section id="analysis-plan">
+<h2>Analysis plan<a class="headerlink" href="#analysis-plan" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Import data</p></li>
+<li><p>EDA and Data Prep</p></li>
+<li><p>Check for consistency between human scores.</p></li>
+<li><p>Check for consistency between model scores.</p></li>
+<li><p>Compare the model generated scores and human scores.</p></li>
+</ul>
+<p>The key evaluation metric used to evaluate whether the models agree with the human scores is the Quadratic Weighted Kappa.
+Quadratic Weighted Kappa (QWK), also known as Cohen’s kappa, is a statistical measure used to evaluate the agreement between two raters
+who each classify items into mutually exclusive categories. This metric is especially common in scenarios where ratings are subjective,
+such as evaluating essay scoring. However, there are limitations with relying solely on QWK as a metric for assesing automated essay scoring,
+therefore we will be using other supporting metrics such as pearsons and spearmans correlation coefficent and MAE and RMSE for assesing the automated
+assesment scoring. (Doewes, Kurdhi, &amp; Saxena, 2023)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Data only includes essay set 7. Narrative based essays.</p>
+</div>
+</section>
+<section id="import-the-data">
+<h2>Import the data<a class="headerlink" href="#import-the-data" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Path to the CSV file</span>
+<span class="n">essay_path</span> <span class="o">=</span> <span class="s1">&#39;essay-7-all.csv&#39;</span>
+<span class="n">results_3_path</span> <span class="o">=</span> <span class="s1">&#39;results-3.csv&#39;</span>
+<span class="n">results_4_path</span> <span class="o">=</span> <span class="s1">&#39;results-4.csv&#39;</span>
+
+<span class="c1"># Reading the CSV file into a DataFrame</span>
+<span class="n">essay_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">essay_path</span><span class="p">)</span>
+<span class="n">results_3_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">results_3_path</span><span class="p">)</span>
+<span class="n">results_4_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">results_4_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-prep-and-eda">
+<h2>Data Prep and EDA<a class="headerlink" href="#data-prep-and-eda" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Removing columns where all values are null</span>
+<span class="n">essay_df</span> <span class="o">=</span> <span class="n">essay_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">results_3_df</span> <span class="o">=</span> <span class="n">results_3_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">results_4_df</span> <span class="o">=</span> <span class="n">results_4_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">essay_df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+
+<span class="c1"># Calculate the number of words in each essay</span>
+<span class="n">essay_df</span><span class="p">[</span><span class="s1">&#39;word_count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">essay_df</span><span class="p">[</span><span class="s1">&#39;essay&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+
+<span class="c1"># Find the maximum number of words in any essay</span>
+<span class="n">max_word_count</span> <span class="o">=</span> <span class="n">essay_df</span><span class="p">[</span><span class="s1">&#39;word_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The maximum number of words in an essay is: </span><span class="si">{</span><span class="n">max_word_count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Find the maximum number of words in any essay</span>
+<span class="n">avg_word_count</span> <span class="o">=</span> <span class="n">essay_df</span><span class="p">[</span><span class="s1">&#39;word_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The average number of words in an essay is: </span><span class="si">{</span><span class="n">avg_word_count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           essay_id  essay_set  rater1_domain1  rater2_domain1  domain1_score  \
+count   1569.000000     1569.0     1569.000000     1569.000000     1569.00000   
+mean   18705.326960        7.0        8.023582        8.038878       16.06246   
+std      498.542554        0.0        2.424120        2.517367        4.58535   
+min    17834.000000        7.0        0.000000        0.000000        2.00000   
+25%    18273.000000        7.0        6.000000        6.000000       13.00000   
+50%    18712.000000        7.0        8.000000        8.000000       16.00000   
+75%    19139.000000        7.0       10.000000       10.000000       19.00000   
+max    19563.000000        7.0       12.000000       12.000000       24.00000   
+
+       rater1_trait1  rater1_trait2  rater1_trait3  rater1_trait4  \
+count    1569.000000    1569.000000    1569.000000    1569.000000   
+mean        1.837476       2.022945       1.992352       2.170809   
+std         0.862911       0.717481       0.613365       0.688935   
+min         0.000000       0.000000       0.000000       0.000000   
+25%         1.000000       2.000000       2.000000       2.000000   
+50%         2.000000       2.000000       2.000000       2.000000   
+75%         2.000000       3.000000       2.000000       3.000000   
+max         3.000000       3.000000       3.000000       3.000000   
+
+       rater2_trait1  rater2_trait2  rater2_trait3  rater2_trait4  
+count    1569.000000    1569.000000    1569.000000    1569.000000  
+mean        1.846399       2.027406       1.999363       2.165711  
+std         0.884959       0.724842       0.637377       0.692026  
+min         0.000000       0.000000       0.000000       0.000000  
+25%         1.000000       2.000000       2.000000       2.000000  
+50%         2.000000       2.000000       2.000000       2.000000  
+75%         2.000000       3.000000       2.000000       3.000000  
+max         3.000000       3.000000       3.000000       3.000000  
+The maximum number of words in an essay is: 592
+The average number of words in an essay is: 168.18419375398344
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculating the sum of the &#39;error_count&#39; column</span>
+<span class="n">error_count_sum_3</span> <span class="o">=</span> <span class="n">results_3_df</span><span class="p">[</span><span class="s1">&#39;error_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">error_count_sum_4</span> <span class="o">=</span> <span class="n">results_4_df</span><span class="p">[</span><span class="s1">&#39;error_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Printing the sum of the &#39;error_count&#39; column</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total error count for model 1:&quot;</span><span class="p">,</span> <span class="n">error_count_sum_3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total error count for model 2:&quot;</span><span class="p">,</span> <span class="n">error_count_sum_4</span><span class="p">)</span>
+
+<span class="c1"># Remove the error records from both datasets</span>
+<span class="c1"># Filtering out rows where &#39;error_count&#39; is greater than 0</span>
+<span class="n">results_3_df</span> <span class="o">=</span> <span class="n">results_3_df</span><span class="p">[</span><span class="n">results_3_df</span><span class="p">[</span><span class="s1">&#39;error_count&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">results_4_df</span> <span class="o">=</span> <span class="n">results_4_df</span><span class="p">[</span><span class="n">results_4_df</span><span class="p">[</span><span class="s1">&#39;error_count&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Printing the shape of the cleaned dataframes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cleaned data for model 1:&quot;</span><span class="p">,</span> <span class="n">results_3_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cleaned data for model 2:&quot;</span><span class="p">,</span> <span class="n">results_4_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total error count for model 1: 25
+Total error count for model 2: 2
+Cleaned data for model 1: (1544, 21)
+Cleaned data for model 2: (1567, 21)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="create-combined-data-frame">
+<h3>Create Combined Data Frame.<a class="headerlink" href="#create-combined-data-frame" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Checking the uniqueness of essay_id in each dataframe</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">essay_df</span><span class="p">[</span><span class="s1">&#39;essay_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">essay_df</span><span class="p">)</span> <span class="ow">and</span> 
+    <span class="n">results_3_df</span><span class="p">[</span><span class="s1">&#39;essay_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">results_3_df</span><span class="p">)</span> <span class="ow">and</span>
+    <span class="n">results_4_df</span><span class="p">[</span><span class="s1">&#39;essay_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">results_4_df</span><span class="p">)):</span>
+    
+    <span class="c1"># Selecting and renaming the necessary columns from essay_df, and making a copy</span>
+    <span class="n">essay_columns</span> <span class="o">=</span> <span class="n">essay_df</span><span class="p">[[</span><span class="s1">&#39;essay_id&#39;</span><span class="p">,</span> <span class="s1">&#39;essay&#39;</span><span class="p">,</span> <span class="s1">&#39;rater1_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;rater1_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;rater1_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;rater1_trait4&#39;</span><span class="p">,</span> <span class="s1">&#39;rater1_domain1&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait4&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_domain1&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">essay_columns</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;rater1_domain1&#39;</span><span class="p">:</span> <span class="s1">&#39;rater1_total&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_domain1&#39;</span><span class="p">:</span> <span class="s1">&#39;rater2_total&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Selecting, renaming, and calculating the total score for results_3_df, and making a copy</span>
+    <span class="n">results_3_columns</span> <span class="o">=</span> <span class="n">results_3_df</span><span class="p">[[</span><span class="s1">&#39;essay_id&#39;</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait4&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">results_3_columns</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;model_1_name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait1&#39;</span><span class="p">:</span> <span class="s1">&#39;model_1_trait1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait2&#39;</span><span class="p">:</span> <span class="s1">&#39;model_1_trait2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait3&#39;</span><span class="p">:</span> <span class="s1">&#39;model_1_trait3&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait4&#39;</span><span class="p">:</span> <span class="s1">&#39;model_1_trait4&#39;</span>
+    <span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">results_3_columns</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results_3_columns</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;model_1_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;model_1_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;model_1_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;model_1_trait4&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Selecting, renaming, and calculating the total score for results_4_df, and making a copy</span>
+    <span class="n">results_4_columns</span> <span class="o">=</span> <span class="n">results_4_df</span><span class="p">[[</span><span class="s1">&#39;essay_id&#39;</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;autoscore_trait4&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">results_4_columns</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;model_2_name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait1&#39;</span><span class="p">:</span> <span class="s1">&#39;model_2_trait1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait2&#39;</span><span class="p">:</span> <span class="s1">&#39;model_2_trait2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait3&#39;</span><span class="p">:</span> <span class="s1">&#39;model_2_trait3&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;autoscore_trait4&#39;</span><span class="p">:</span> <span class="s1">&#39;model_2_trait4&#39;</span>
+    <span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">results_4_columns</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results_4_columns</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;model_2_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;model_2_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;model_2_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;model_2_trait4&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Merging the DataFrames on &#39;essay_id&#39;</span>
+    <span class="n">merged_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">essay_columns</span><span class="p">,</span> <span class="n">results_3_columns</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;essay_id&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">merged_df</span><span class="p">,</span> <span class="n">results_4_columns</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;essay_id&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Remove all rows with any missing values</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+    <span class="c1"># Displaying the shape of the cleaned DataFrame</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of the combined DataFrame:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data integrity check failed: duplicate essay_id found in one or more DataFrames.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape of the combined DataFrame: (1542, 24)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Setting the aesthetic style of the plots</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+
+<span class="c1"># Initialize a matplotlib figure with two subplots (side by side)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># sharey ensures both plots use the same y-axis scale</span>
+
+<span class="c1"># Plotting the histogram for human total scores on the first subplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater1_total&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rater 1 Total&#39;</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater2_total&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rater 2 Total&#39;</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Histogram of Human Scores&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Total Scores&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Score Sources&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plotting the histogram for model total scores on the second subplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model 1 Total Score&#39;</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model 2 Total Score&#39;</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Histogram of Model Scores&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Total Scores&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Score Sources&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adjust layout to prevent overlap and ensure clear readability</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># Display the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/37b25cc6c89d5d56c64118fe6f6c61178b7d8c9d206351b08958b316016d2e27.png" src="_images/37b25cc6c89d5d56c64118fe6f6c61178b7d8c9d206351b08958b316016d2e27.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="human-raters-consistency-analysis">
+<h2>Human Raters Consistency Analysis<a class="headerlink" href="#human-raters-consistency-analysis" title="Link to this heading">#</a></h2>
+<section id="objective">
+<h3>Objective<a class="headerlink" href="#objective" title="Link to this heading">#</a></h3>
+<p>To assess the consistency between two human raters, ensuring their reliability before comparing their scores with model results.</p>
+</section>
+<section id="key-findings">
+<h3>Key Findings<a class="headerlink" href="#key-findings" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Central Tendency</strong>: Both raters show nearly identical mean scores.</p></li>
+<li><p><strong>Variability</strong>: Standard deviations are close (Rater 1: 2.43, Rater 2: 2.51), indicating similar variability in their ratings.</p></li>
+</ul>
+</section>
+<section id="correlation-metrics">
+<h3>Correlation Metrics<a class="headerlink" href="#correlation-metrics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Pearson Correlation Coefficient</strong>: 0.725 (P-value: extremely low), suggesting a strong positive linear relationship.</p></li>
+<li><p><strong>Spearman Correlation Coefficient</strong>: 0.711 (P-value: extremely low), indicating consistent scoring patterns across the scoring range.</p></li>
+</ul>
+</section>
+<section id="quadratic-weighted-kappa">
+<h3>Quadratic Weighted Kappa<a class="headerlink" href="#quadratic-weighted-kappa" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Quadratic Weighted Kappa</strong>: 0.724, indicating substantial agreement between the raters, adjusted for chance. This value is close to the threshold of excellent agreement, suggesting that the raters’ assessments are reliable and consistent.</p></li>
+</ul>
+</section>
+<section id="visual-analysis">
+<h3>Visual Analysis<a class="headerlink" href="#visual-analysis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Figure 1</strong>: Boxplot shows identical distributions for different traits across raters.</p></li>
+<li><p><strong>Figure 2</strong>: Scatterplot with frequency scaling highlights common agreement points with larger dots representing more frequent score pairs, though some slight disagreement is observed.</p></li>
+<li><p><strong>Figure 3</strong>: Boxplot of total scores demonstrates similar score distributions, reinforcing rater consistency.</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
+<p>The correlation metrics and Quadratic Weighted Kappa of 0.724 confirm substantial agreement between the human raters. This level of consistency, supported by both statistical and visual analyses, validates the reliability of the raters’ scores for use in further comparative evaluations with automated assessment models.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># Basic Statistics</span>
+<span class="n">mean_rater1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater1_total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">mean_rater2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater2_total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+
+<span class="c1"># Additional Statistics</span>
+<span class="n">std_dev_rater1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater1_total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">variance_rater1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater1_total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+<span class="n">iqr_rater1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater1_total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater1_total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+
+<span class="n">std_dev_rater2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater2_total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">variance_rater2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater2_total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+<span class="n">iqr_rater2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater2_total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater2_total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+
+<span class="c1"># Creating a DataFrame for the results</span>
+<span class="n">stats_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Statistic&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span> <span class="s1">&#39;Standard Deviation&#39;</span><span class="p">,</span> <span class="s1">&#39;Variance&#39;</span><span class="p">,</span>  <span class="s1">&#39;Interquartile Range&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Rater 1 Total&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">mean_rater1</span><span class="p">,</span> <span class="n">std_dev_rater1</span><span class="p">,</span> <span class="n">variance_rater1</span><span class="p">,</span> <span class="n">iqr_rater1</span><span class="p">],</span>
+    <span class="s1">&#39;Rater 2 Total&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">mean_rater2</span><span class="p">,</span> <span class="n">std_dev_rater2</span><span class="p">,</span> <span class="n">variance_rater2</span><span class="p">,</span> <span class="n">iqr_rater2</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Printing the results in a tabular format</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Summary of Rater Scores:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stats_df</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summary of Rater Scores:
+          Statistic  Rater 1 Total  Rater 2 Total
+               Mean       8.003891       8.018807
+ Standard Deviation       2.426329       2.514907
+           Variance       5.887071       6.324760
+Interquartile Range       4.000000       4.000000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pingouin</span> <span class="k">as</span> <span class="nn">pg</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">cohen_kappa_score</span>
+
+<span class="c1"># Pearson Correlation - Measures linear correlation</span>
+<span class="n">pearson_corr</span><span class="p">,</span> <span class="n">p_value_pearson</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater1_total&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater2_total&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pearson Correlation Coefficient: </span><span class="si">{</span><span class="n">pearson_corr</span><span class="si">}</span><span class="s2">, P-value: </span><span class="si">{</span><span class="n">p_value_pearson</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Spearman Correlation - Measures monotonic relationship</span>
+<span class="n">spearman_corr</span><span class="p">,</span> <span class="n">p_value_spearman</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">spearmanr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater1_total&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater2_total&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Spearman Rank Correlation Coefficient: </span><span class="si">{</span><span class="n">spearman_corr</span><span class="si">}</span><span class="s2">, P-value: </span><span class="si">{</span><span class="n">p_value_spearman</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculating the Quadratic Weighted Kappa</span>
+<span class="n">qwk_score</span> <span class="o">=</span> <span class="n">cohen_kappa_score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater1_total&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rater2_total&#39;</span><span class="p">],</span> <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;quadratic&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Quadratic Weighted Kappa: </span><span class="si">{</span><span class="n">qwk_score</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pearson Correlation Coefficient: 0.7246372298038762, P-value: 2.7041333100701165e-251
+Spearman Rank Correlation Coefficient: 0.7107944878198085, P-value: 1.404379032099486e-237
+Quadratic Weighted Kappa: 0.7241584434783956
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="c1"># Creating a new DataFrame that stacks the data for easier comparison in boxplots</span>
+<span class="c1"># This involves melting the DataFrame so that we can use seaborn&#39;s boxplot to compare distributions side-by-side.</span>
+<span class="n">melted_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;rater1_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;rater1_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;rater1_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;rater1_trait4&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;rater2_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait4&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># Rename columns to a simpler form</span>
+<span class="n">melted_data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;R1 Trait 1&#39;</span><span class="p">,</span> <span class="s1">&#39;R1 Trait 2&#39;</span><span class="p">,</span> <span class="s1">&#39;R1 Trait 3&#39;</span><span class="p">,</span> <span class="s1">&#39;R1 Trait 4&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;R2 Trait 1&#39;</span><span class="p">,</span> <span class="s1">&#39;R2 Trait 2&#39;</span><span class="p">,</span> <span class="s1">&#39;R2 Trait 3&#39;</span><span class="p">,</span> <span class="s1">&#39;R2 Trait 4&#39;</span><span class="p">]</span>
+
+<span class="c1"># Melting the DataFrame</span>
+<span class="n">melted_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">melted_data</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;Trait&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;Score&#39;</span><span class="p">)</span>
+
+<span class="c1"># Creating the boxplot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Trait&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Score&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Trait&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">melted_data</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Set3&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;(Fig 1) Comparison of Rater 1 and Rater 2 Scores for Each Trait&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Rater and Trait&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/mp/xnyk4rhx3jdf4kjnnhwggjwr0000gn/T/ipykernel_9262/1251333834.py:22: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  plt.legend(title=&#39;Rater and Trait&#39;, bbox_to_anchor=(1.05, 1), loc=&#39;upper left&#39;)
+</pre></div>
+</div>
+<img alt="_images/a90df3578390a59981c2ae52d6f80f4bc25fd71ef5d4efc7ec062a4cd5c3437b.png" src="_images/a90df3578390a59981c2ae52d6f80f4bc25fd71ef5d4efc7ec062a4cd5c3437b.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setting the aesthetic style of the plots</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate frequencies of each (Rater1, Rater2) pair</span>
+<span class="n">frequency</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;rater1_total&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_total&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create a new column for point sizes, adjusted for better visibility</span>
+<span class="n">frequency</span><span class="p">[</span><span class="s1">&#39;sizes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">frequency</span><span class="p">[</span><span class="s1">&#39;Frequency&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>  <span class="c1"># Scale factor for size, adjust as needed for visibility</span>
+
+<span class="c1"># Scatterplot to visualize the relationship between rater1_total and rater2_total with frequency sizing</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">frequency</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;rater1_total&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;rater2_total&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;sizes&#39;</span><span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>  <span class="c1"># min and max size of points</span>
+                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Frequency&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;cool&#39;</span><span class="p">)</span>  <span class="c1"># No legend for sizes, color by frequency</span>
+
+<span class="c1"># Adding titles and labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;(Fig 2) Scatterplot of Scores by Rater 1 vs. Rater 2 with Frequency Scaling&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Rater 1 Total Score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Rater 2 Total Score&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Boxplot to compare distributions of scores from different raters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;rater1_total&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_total&#39;</span><span class="p">]])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;(Fig 3) Boxplot of Scores by Rater 1 and Rater 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Scores&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/ef89fd7c7bbe17de67f33109cd0cbec6a165ba5a6ef37ed7efe1f8a2cb8966e0.png" src="_images/ef89fd7c7bbe17de67f33109cd0cbec6a165ba5a6ef37ed7efe1f8a2cb8966e0.png" />
+<img alt="_images/b06a1c62e0ecfb58e2073a5a1fd68e8249044c0ebb2217f7e435cade8f8f01a0.png" src="_images/b06a1c62e0ecfb58e2073a5a1fd68e8249044c0ebb2217f7e435cade8f8f01a0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="model-scores-consistency-analysis">
+<h2>Model Scores Consistency Analysis<a class="headerlink" href="#model-scores-consistency-analysis" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Objective<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>To assess the reliability and consistency of two automated models, comparing their performance in scoring to identify any discrepancies before utilizing their outputs in conjunction with human raters.</p>
+</section>
+<section id="id2">
+<h3>Key Findings<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Central Tendency</strong>:</p>
+<ul>
+<li><p><strong>Model 1 Mean</strong>: 8.566148</p></li>
+<li><p><strong>Model 2 Mean</strong>: 6.410506</p></li>
+<li><p>The models show significant differences in their average scores, with Model 1 consistently scoring higher than Model 2.</p></li>
+</ul>
+</li>
+<li><p><strong>Variability</strong>:</p>
+<ul>
+<li><p><strong>Standard Deviation</strong>: Model 1 has a standard deviation of 1.364887, while Model 2’s is higher at 2.060907, indicating that Model 2 scores are more spread out.</p></li>
+<li><p><strong>Variance</strong>: The variance for Model 2 (4.247339) is more than double that of Model 1 (1.862916), further indicating greater inconsistency in Model 2’s scoring pattern.</p></li>
+<li><p><strong>Interquartile Range</strong>: Model 2 also exhibits a larger interquartile range (4), suggesting a broader spread of scores within the middle 50% compared to Model 1 (2).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h3>Correlation Metrics<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Pearson Correlation Coefficient</strong>: 0.5586628582731928 (P-value: extremely low), suggesting only a moderate positive linear relationship, which points to inconsistencies in how models correlate with each other.</p></li>
+<li><p><strong>Spearman Rank Correlation Coefficient</strong>: 0.5442678883613659 (P-value: extremely low), which underscores the non-linear inconsistencies between the models’ scoring trends.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>Visual Analysis<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Figure 4</strong>: The comparison of trait scores in the boxplot reveals distinct differences between the models, with Model 1 showing more uniform scores across traits than Model 2.</p></li>
+<li><p><strong>Figure 5</strong>: Scatterplot with frequency scaling illustrates that while there are common score pairings between the models, there are also visible areas where the scores diverge significantly.</p></li>
+<li><p><strong>Figure 6</strong>: The boxplot of total scores clearly highlights the different scoring distributions between the models, with Model 1 showing tighter score clustering compared to the broader spread in Model 2’s scores.</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>Conclusion<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>The statistical analysis and visual inspections reveal notable discrepancies in scoring between the two models. Despite some moderate correlation, the considerable differences in mean scores, variability, and visual evidence from the plots suggest that the models are not consistent with each other.
+Such variations underscore the need to treat these models as seperate when comparing them with human scores.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate basic statistics for the model scores</span>
+<span class="n">mean_model1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_model2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># Calculate additional statistics for variability</span>
+<span class="n">std_dev_model1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">variance_model1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+<span class="n">iqr_model1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+
+<span class="n">std_dev_model2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">variance_model2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+<span class="n">iqr_model2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+
+<span class="c1"># Create a DataFrame for the results</span>
+<span class="n">stats_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Statistic&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span> <span class="s1">&#39;Standard Deviation&#39;</span><span class="p">,</span> <span class="s1">&#39;Variance&#39;</span><span class="p">,</span> <span class="s1">&#39;Interquartile Range&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Model 1 Total&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">mean_model1</span><span class="p">,</span> <span class="n">std_dev_model1</span><span class="p">,</span> <span class="n">variance_model1</span><span class="p">,</span> <span class="n">iqr_model1</span><span class="p">],</span>
+    <span class="s1">&#39;Model 2 Total&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">mean_model2</span><span class="p">,</span> <span class="n">std_dev_model2</span><span class="p">,</span> <span class="n">variance_model2</span><span class="p">,</span> <span class="n">iqr_model2</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Print the results in a tabular format</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Summary of Model Scores:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stats_df</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="c1"># Calculate and print Pearson and Spearman correlation coefficients for the model scores</span>
+<span class="n">pearson_corr</span><span class="p">,</span> <span class="n">p_value_pearson</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pearson Correlation Coefficient: </span><span class="si">{</span><span class="n">pearson_corr</span><span class="si">}</span><span class="s2">, P-value: </span><span class="si">{</span><span class="n">p_value_pearson</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">spearman_corr</span><span class="p">,</span> <span class="n">p_value_spearman</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">spearmanr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Spearman Rank Correlation Coefficient: </span><span class="si">{</span><span class="n">spearman_corr</span><span class="si">}</span><span class="s2">, P-value: </span><span class="si">{</span><span class="n">p_value_spearman</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summary of Model Scores:
+          Statistic  Model 1 Total  Model 2 Total
+               Mean       8.566148       6.410506
+ Standard Deviation       1.364887       2.060907
+           Variance       1.862916       4.247339
+Interquartile Range       2.000000       4.000000
+Pearson Correlation Coefficient: 0.5586628582731928, P-value: 2.836564217783995e-127
+Spearman Rank Correlation Coefficient: 0.5442678883613659, P-value: 1.2430225610008384e-119
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Prepare DataFrame for boxplots and scatter plots by melting</span>
+<span class="n">model_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;model_1_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;model_1_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;model_1_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;model_1_trait4&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;model_2_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;model_2_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;model_2_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;model_2_trait4&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">model_data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M1 Trait 1&#39;</span><span class="p">,</span> <span class="s1">&#39;M1 Trait 2&#39;</span><span class="p">,</span> <span class="s1">&#39;M1 Trait 3&#39;</span><span class="p">,</span> <span class="s1">&#39;M1 Trait 4&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;M2 Trait 1&#39;</span><span class="p">,</span> <span class="s1">&#39;M2 Trait 2&#39;</span><span class="p">,</span> <span class="s1">&#39;M2 Trait 3&#39;</span><span class="p">,</span> <span class="s1">&#39;M2 Trait 4&#39;</span><span class="p">]</span>
+<span class="n">model_data_melted</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">model_data</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;Trait&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;Score&#39;</span><span class="p">)</span>
+
+<span class="c1"># Boxplot for model traits</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Trait&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Score&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Trait&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">model_data_melted</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Set2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;(Fig 4) Comparison of Model 1 and Model 2 Scores for Each Trait&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Model and Trait&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Calculate frequencies of each (Model1, Model2) total score pair</span>
+<span class="n">frequency</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">,</span> <span class="s1">&#39;model_2_total_score&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">frequency</span><span class="p">[</span><span class="s1">&#39;sizes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">frequency</span><span class="p">[</span><span class="s1">&#39;Frequency&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>  <span class="c1"># Adjusting size for better visibility</span>
+
+<span class="c1"># Scatterplot with frequency scaling for model total scores</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">frequency</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;sizes&#39;</span><span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Frequency&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;cool&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;(Fig 5) Scatterplot of Total Scores by Model 1 vs. Model 2 with Frequency Scaling&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Model 1 Total Score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Model 2 Total Score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Boxplot to compare distributions of total scores from both models</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">,</span> <span class="s1">&#39;model_2_total_score&#39;</span><span class="p">]])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;(Fig 6) Boxplot of Total Scores by Model 1 and Model 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Scores&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/mp/xnyk4rhx3jdf4kjnnhwggjwr0000gn/T/ipykernel_9262/197201416.py:13: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  plt.legend(title=&#39;Model and Trait&#39;, bbox_to_anchor=(1.05, 1), loc=&#39;upper left&#39;)
+</pre></div>
+</div>
+<img alt="_images/945ca9e87a9b282e265be14790895ca46f1f3a30de20c6cef930ff44c1a852d5.png" src="_images/945ca9e87a9b282e265be14790895ca46f1f3a30de20c6cef930ff44c1a852d5.png" />
+<img alt="_images/258560e995daa92756324551651593509941dc3bebca921187b75e6f13ef3b78.png" src="_images/258560e995daa92756324551651593509941dc3bebca921187b75e6f13ef3b78.png" />
+<img alt="_images/432672e995a14ef22539cf6662b436a715bb5b89276c00d0ff0889f3a651680c.png" src="_images/432672e995a14ef22539cf6662b436a715bb5b89276c00d0ff0889f3a651680c.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="comparing-human-rated-scores-versus-model-scores">
+<h2>Comparing Human-Rated Scores Versus Model Scores<a class="headerlink" href="#comparing-human-rated-scores-versus-model-scores" title="Link to this heading">#</a></h2>
+<p>Our analysis has shown that human-rated scores exhibit enough consistency to be combined into a single comprehensive score. In contrast, model-generated scores vary significantly, necessitating a separate evaluation against the unified human scores. This section outlines our approach to comparing these model scores with the consolidated human ratings.</p>
+<section id="id6">
+<h3>Analysis Plan<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Consolidation of Human Scores</strong>: To establish a clear baseline for comparisons, we will average the scores from multiple human raters into a single score per trait and overall. This unified score will serve as the standard against which we measure each model’s performance.</p></li>
+<li><p><strong>Selection of Evaluation Metrics</strong>: We will use Mean Absolute Error (MAE) and Root Mean Square Error (RMSE) to quantify the accuracy and consistency of the models relative to human scores. Additionally, Pearson and Spearman correlation coefficients will assess the strength and direction of the relationships between model predictions and human judgments.</p></li>
+<li><p><strong>Purpose of Metrics</strong>:</p>
+<ul class="simple">
+<li><p><strong>MAE/RMSE</strong>: Evaluate the average magnitude and distribution of errors between model predictions and human scores.</p></li>
+<li><p><strong>Correlation Coefficients</strong>: Determine how well model scores align with human ratings in terms of linear and rank-order relationships.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id7">
+<h3>Objective<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>This structured approach allows us to critically assess which model more accurately mirrors human assessment, guiding further improvements and ensuring the reliability of automated scoring systems in practical applications.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Calculate the whole number average of human rater scores for each trait and create new columns</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;rater1_trait1&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait1&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;rater1_trait2&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait2&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;rater1_trait3&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait3&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait4&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;rater1_trait4&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_trait4&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Calculate the overall whole number average score combining all traits from both raters</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;rater1_total&#39;</span><span class="p">,</span> <span class="s1">&#39;rater2_total&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+
+<span class="c1"># Note on scoring:</span>
+<span class="c1"># This approach of averaging and rounding might still favor the higher marker, especially noticeable with only two raters.</span>
+<span class="c1"># Ideally, having an odd number of raters, such as three, could help mitigate this bias, as it allows for a median value that might better represent a consensus score.</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+</section>
+<section id="evaluation-of-model-1-performance-against-human-scores">
+<h2>Evaluation of Model 1 Performance Against Human Scores<a class="headerlink" href="#evaluation-of-model-1-performance-against-human-scores" title="Link to this heading">#</a></h2>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
+<p>The analysis assesses Model 1’s ability to approximate human average scores across four traits and overall performance. Metrics used include Mean Absolute Error (MAE), Root Mean Square Error (RMSE), Pearson and Spearman correlation coefficients, and Quadratic Weighted Kappa (QWK).</p>
+</section>
+<section id="error-metrics">
+<h3>Error Metrics<a class="headerlink" href="#error-metrics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Traits 1-4</strong>: MAE values range from 0.229 to 0.641, and RMSE values from 0.500 to 0.946. Lower values in Traits 3 and 4 suggest better model performance on these specific aspects.</p></li>
+<li><p><strong>Total Scores</strong>: MAE of 1.760 and RMSE of 2.247 indicate more significant discrepancies in the model’s overall scoring capability compared to individual traits.</p></li>
+</ul>
+</section>
+<section id="correlation-analysis">
+<h3>Correlation Analysis<a class="headerlink" href="#correlation-analysis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Traits 1-4</strong>: Pearson and Spearman correlations range from weak to moderate (0.148 to 0.355). Higher values in Traits 1 and 3 suggest these are better modeled.</p></li>
+<li><p><strong>Total</strong>: Pearson correlation of 0.402 and Spearman correlation of 0.378 indicate a moderate relationship overall, suggesting some alignment with human scoring.</p></li>
+</ul>
+</section>
+<section id="quadratic-weighted-kappa-analysis">
+<h3>Quadratic Weighted Kappa Analysis<a class="headerlink" href="#quadratic-weighted-kappa-analysis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Traits 1-4</strong>: QWK scores range from 0.158 to 0.259, indicating poor to fair agreement between Model 1’s scores and human scores, reflecting inconsistency across traits.</p></li>
+<li><p><strong>Total</strong>: QWK of 0.336 for the total scores suggests a fair level of agreement, pointing to some capacity of the model to replicate human scoring, yet underscoring the necessity for improvement.</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>Conclusion<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>While Model 1 shows moderate success in approximating human scores on specific traits, the overall performance (considering total scores) reveals significant room for improvement. The model effectively mirrors human ratings in some aspects but fails to consistently replicate the human scoring pattern across all evaluated areas, as also highlighted by the generally low Quadratic Weighted Kappa scores. This comprehensive analysis underscores the need for model refinement to enhance accuracy, consistency in scoring, and agreement with human raters.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">cohen_kappa_score</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span><span class="p">,</span> <span class="n">spearmanr</span>
+
+
+<span class="c1"># Calculate MAE, RMSE, and QWK for each trait</span>
+<span class="n">mae_trait1</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait1&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait1&#39;</span><span class="p">])</span>
+<span class="n">rmse_trait1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait1&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait1&#39;</span><span class="p">]))</span>
+<span class="n">qwk_trait1</span> <span class="o">=</span> <span class="n">cohen_kappa_score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;quadratic&#39;</span><span class="p">)</span>
+
+<span class="n">mae_trait2</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait2&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait2&#39;</span><span class="p">])</span>
+<span class="n">rmse_trait2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait2&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait2&#39;</span><span class="p">]))</span>
+<span class="n">qwk_trait2</span> <span class="o">=</span> <span class="n">cohen_kappa_score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;quadratic&#39;</span><span class="p">)</span>
+
+<span class="n">mae_trait3</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait3&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait3&#39;</span><span class="p">])</span>
+<span class="n">rmse_trait3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait3&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait3&#39;</span><span class="p">]))</span>
+<span class="n">qwk_trait3</span> <span class="o">=</span> <span class="n">cohen_kappa_score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;quadratic&#39;</span><span class="p">)</span>
+
+<span class="n">mae_trait4</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait4&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait4&#39;</span><span class="p">])</span>
+<span class="n">rmse_trait4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait4&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait4&#39;</span><span class="p">]))</span>
+<span class="n">qwk_trait4</span> <span class="o">=</span> <span class="n">cohen_kappa_score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait4&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait4&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;quadratic&#39;</span><span class="p">)</span>
+
+<span class="c1"># Calculate MAE, RMSE, and QWK for total scores</span>
+<span class="n">mae_total</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_score&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">])</span>
+<span class="n">rmse_total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_score&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">]))</span>
+<span class="n">qwk_total</span> <span class="o">=</span> <span class="n">cohen_kappa_score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;quadratic&#39;</span><span class="p">)</span>
+
+<span class="c1"># Calculate Pearson and Spearman correlations for each trait</span>
+<span class="n">pearson_corr_trait1</span><span class="p">,</span> <span class="n">p_pearson_trait1</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait1&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait1&#39;</span><span class="p">])</span>
+<span class="n">spearman_corr_trait1</span><span class="p">,</span> <span class="n">p_spearman_trait1</span> <span class="o">=</span> <span class="n">spearmanr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait1&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait1&#39;</span><span class="p">])</span>
+
+<span class="n">pearson_corr_trait2</span><span class="p">,</span> <span class="n">p_pearson_trait2</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait2&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait2&#39;</span><span class="p">])</span>
+<span class="n">spearman_corr_trait2</span><span class="p">,</span> <span class="n">p_spearman_trait2</span> <span class="o">=</span> <span class="n">spearmanr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait2&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait2&#39;</span><span class="p">])</span>
+
+<span class="n">pearson_corr_trait3</span><span class="p">,</span> <span class="n">p_pearson_trait3</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait3&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait3&#39;</span><span class="p">])</span>
+<span class="n">spearman_corr_trait3</span><span class="p">,</span> <span class="n">p_spearman_trait3</span> <span class="o">=</span> <span class="n">spearmanr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait3&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait3&#39;</span><span class="p">])</span>
+
+<span class="n">pearson_corr_trait4</span><span class="p">,</span> <span class="n">p_pearson_trait4</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait4&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait4&#39;</span><span class="p">])</span>
+<span class="n">spearman_corr_trait4</span><span class="p">,</span> <span class="n">p_spearman_trait4</span> <span class="o">=</span> <span class="n">spearmanr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait4&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_trait4&#39;</span><span class="p">])</span>
+
+<span class="n">pearson_corr_total</span><span class="p">,</span> <span class="n">p_pearson_total</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_score&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">])</span>
+<span class="n">spearman_corr_total</span><span class="p">,</span> <span class="n">p_spearman_total</span> <span class="o">=</span> <span class="n">spearmanr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_score&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_1_total_score&#39;</span><span class="p">])</span>
+
+<span class="c1"># Display the errors, correlations, and QWK for each trait and total scores</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Metrics for each trait and total scores:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trait 1 - MAE: </span><span class="si">{</span><span class="n">mae_trait1</span><span class="si">}</span><span class="s2">, RMSE: </span><span class="si">{</span><span class="n">rmse_trait1</span><span class="si">}</span><span class="s2">, QWK: </span><span class="si">{</span><span class="n">qwk_trait1</span><span class="si">}</span><span class="s2">, Pearson: </span><span class="si">{</span><span class="n">pearson_corr_trait1</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_pearson_trait1</span><span class="si">}</span><span class="s2">), Spearman: </span><span class="si">{</span><span class="n">spearman_corr_trait1</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_spearman_trait1</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trait 2 - MAE: </span><span class="si">{</span><span class="n">mae_trait2</span><span class="si">}</span><span class="s2">, RMSE: </span><span class="si">{</span><span class="n">rmse_trait2</span><span class="si">}</span><span class="s2">, QWK: </span><span class="si">{</span><span class="n">qwk_trait2</span><span class="si">}</span><span class="s2">, Pearson: </span><span class="si">{</span><span class="n">pearson_corr_trait2</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_pearson_trait2</span><span class="si">}</span><span class="s2">), Spearman: </span><span class="si">{</span><span class="n">spearman_corr_trait2</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_spearman_trait2</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trait 3 - MAE: </span><span class="si">{</span><span class="n">mae_trait3</span><span class="si">}</span><span class="s2">, RMSE: </span><span class="si">{</span><span class="n">rmse_trait3</span><span class="si">}</span><span class="s2">, QWK: </span><span class="si">{</span><span class="n">qwk_trait3</span><span class="si">}</span><span class="s2">, Pearson: </span><span class="si">{</span><span class="n">pearson_corr_trait3</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_pearson_trait3</span><span class="si">}</span><span class="s2">), Spearman: </span><span class="si">{</span><span class="n">spearman_corr_trait3</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_spearman_trait3</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trait 4 - MAE: </span><span class="si">{</span><span class="n">mae_trait4</span><span class="si">}</span><span class="s2">, RMSE: </span><span class="si">{</span><span class="n">rmse_trait4</span><span class="si">}</span><span class="s2">, QWK: </span><span class="si">{</span><span class="n">qwk_trait4</span><span class="si">}</span><span class="s2">, Pearson: </span><span class="si">{</span><span class="n">pearson_corr_trait4</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_pearson_trait4</span><span class="si">}</span><span class="s2">), Spearman: </span><span class="si">{</span><span class="n">spearman_corr_trait4</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_spearman_trait4</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total - MAE: </span><span class="si">{</span><span class="n">mae_total</span><span class="si">}</span><span class="s2">, RMSE: </span><span class="si">{</span><span class="n">rmse_total</span><span class="si">}</span><span class="s2">, QWK: </span><span class="si">{</span><span class="n">qwk_total</span><span class="si">}</span><span class="s2">, Pearson: </span><span class="si">{</span><span class="n">pearson_corr_total</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_pearson_total</span><span class="si">}</span><span class="s2">), Spearman: </span><span class="si">{</span><span class="n">spearman_corr_total</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_spearman_total</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Metrics for each trait and total scores:
+Trait 1 - MAE: 0.6413748378728924, RMSE: 0.946356245116951, QWK: 0.25007025632465396, Pearson: 0.35483932955723874 (p=5.675670909719326e-47), Spearman: 0.3493019539635336 (p=1.7748699164966692e-45)
+Trait 2 - MAE: 0.46108949416342415, RMSE: 0.7071067811865476, QWK: 0.2592072419211928, Pearson: 0.29335766093601645 (p=5.557219175747727e-32), Spearman: 0.2809526002238581 (p=2.2908464975307327e-29)
+Trait 3 - MAE: 0.22892347600518806, RMSE: 0.49967564057565905, QWK: 0.23264543247791658, Pearson: 0.26180919491773247 (p=1.3847248742189622e-25), Spearman: 0.25638580840370306 (p=1.4379143154849911e-24)
+Trait 4 - MAE: 0.43320363164721143, RMSE: 0.6927454356768455, QWK: 0.15871396215731604, Pearson: 0.16217645549192397 (p=1.4970074323522732e-10), Spearman: 0.14836829935361628 (p=4.802524908037326e-09)
+Total - MAE: 1.7600518806744487, RMSE: 2.246773158079184, QWK: 0.3358319878911866, Pearson: 0.4020264704585714 (p=5.620807700333056e-61), Spearman: 0.3777920472689505 (p=1.7021154748111399e-53)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="evaluation-of-model-2-performance-against-human-scores">
+<h2>Evaluation of Model 2 Performance Against Human Scores<a class="headerlink" href="#evaluation-of-model-2-performance-against-human-scores" title="Link to this heading">#</a></h2>
+<section id="id9">
+<h3>Error Metrics<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Traits 1-4</strong>: MAE values ranging from 0.489 to 0.802 and RMSE values from 0.750 to 1.023 indicate noticeable discrepancies in Model 2’s predictions compared to human scores, with particularly poor performance on Trait 4.</p></li>
+<li><p><strong>Total Scores</strong>: The high MAE of 2.162 and RMSE of 2.825 highlight significant deviations in the model’s ability to consistently align with overall human scoring.</p></li>
+</ul>
+</section>
+<section id="id10">
+<h3>Correlation Analysis<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Traits 1-4</strong>: With Pearson and Spearman correlations between 0.251 and 0.349, the model shows only a limited ability to mimic human scoring patterns, suggesting substantial misalignment in rank and linear relationships.</p></li>
+<li><p><strong>Total</strong>: Pearson and Spearman correlations of approximately 0.437 and 0.430 respectively, while moderate, still reflect significant inconsistencies and reveal that the model frequently fails to capture the nuances of human scoring.</p></li>
+</ul>
+</section>
+<section id="id11">
+<h3>Quadratic Weighted Kappa Analysis<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Traits 1-4</strong>: QWK scores from 0.136 to 0.323 reveal a generally poor agreement with human scores, with Traits 3 and 4 being particularly problematic. These scores suggest the model often misinterprets the criteria or severity ascribed by human raters.</p></li>
+<li><p><strong>Total</strong>: A QWK of 0.344, while indicating some degree of agreement, is far from demonstrating a robust alignment with human raters, pointing to a model that often misses the mark in understanding and replicating the complexity of human scoring.</p></li>
+</ul>
+</section>
+<section id="id12">
+<h3>Conclusion<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>Despite modest correlations, Model 2’s performance in replicating human scoring patterns is underwhelming across individual traits and overall assessments. The analysis exposes significant shortcomings in the model’s capability to match human scoring precision, especially in understanding the depth and subtlety of traits and overall scores. These results emphasize the need for substantial improvements and recalibration of Model 2 to enhance its accuracy, consistency, and reliability in practical scoring applications. Future refinements should focus on addressing the specific weaknesses in traits that show the poorest agreement and understanding human judgments more deeply.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate MAE, RMSE, and QWK for each trait</span>
+<span class="n">mae_trait1</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait1&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait1&#39;</span><span class="p">])</span>
+<span class="n">rmse_trait1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait1&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait1&#39;</span><span class="p">]))</span>
+<span class="n">qwk_trait1</span> <span class="o">=</span> <span class="n">cohen_kappa_score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;quadratic&#39;</span><span class="p">)</span>
+
+<span class="n">mae_trait2</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait2&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait2&#39;</span><span class="p">])</span>
+<span class="n">rmse_trait2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait2&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait2&#39;</span><span class="p">]))</span>
+<span class="n">qwk_trait2</span> <span class="o">=</span> <span class="n">cohen_kappa_score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;quadratic&#39;</span><span class="p">)</span>
+
+<span class="n">mae_trait3</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait3&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait3&#39;</span><span class="p">])</span>
+<span class="n">rmse_trait3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait3&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait3&#39;</span><span class="p">]))</span>
+<span class="n">qwk_trait3</span> <span class="o">=</span> <span class="n">cohen_kappa_score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;quadratic&#39;</span><span class="p">)</span>
+
+<span class="n">mae_trait4</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait4&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait4&#39;</span><span class="p">])</span>
+<span class="n">rmse_trait4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait4&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait4&#39;</span><span class="p">]))</span>
+<span class="n">qwk_trait4</span> <span class="o">=</span> <span class="n">cohen_kappa_score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait4&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait4&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;quadratic&#39;</span><span class="p">)</span>
+
+<span class="c1"># Calculate MAE, RMSE, and QWK for total scores</span>
+<span class="n">mae_total</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_score&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">])</span>
+<span class="n">rmse_total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_score&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">]))</span>
+<span class="n">qwk_total</span> <span class="o">=</span> <span class="n">cohen_kappa_score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;quadratic&#39;</span><span class="p">)</span>
+
+<span class="c1"># Calculate Pearson and Spearman correlations for each trait</span>
+<span class="n">pearson_corr_trait1</span><span class="p">,</span> <span class="n">p_pearson_trait1</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait1&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait1&#39;</span><span class="p">])</span>
+<span class="n">spearman_corr_trait1</span><span class="p">,</span> <span class="n">p_spearman_trait1</span> <span class="o">=</span> <span class="n">spearmanr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait1&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait1&#39;</span><span class="p">])</span>
+
+<span class="n">pearson_corr_trait2</span><span class="p">,</span> <span class="n">p_pearson_trait2</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait2&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait2&#39;</span><span class="p">])</span>
+<span class="n">spearman_corr_trait2</span><span class="p">,</span> <span class="n">p_spearman_trait2</span> <span class="o">=</span> <span class="n">spearmanr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait2&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait2&#39;</span><span class="p">])</span>
+
+<span class="n">pearson_corr_trait3</span><span class="p">,</span> <span class="n">p_pearson_trait3</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait3&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait3&#39;</span><span class="p">])</span>
+<span class="n">spearman_corr_trait3</span><span class="p">,</span> <span class="n">p_spearman_trait3</span> <span class="o">=</span> <span class="n">spearmanr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait3&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait3&#39;</span><span class="p">])</span>
+
+<span class="n">pearson_corr_trait4</span><span class="p">,</span> <span class="n">p_pearson_trait4</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait4&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait4&#39;</span><span class="p">])</span>
+<span class="n">spearman_corr_trait4</span><span class="p">,</span> <span class="n">p_spearman_trait4</span> <span class="o">=</span> <span class="n">spearmanr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_trait4&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_trait4&#39;</span><span class="p">])</span>
+
+<span class="n">pearson_corr_total</span><span class="p">,</span> <span class="n">p_pearson_total</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_score&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">])</span>
+<span class="n">spearman_corr_total</span><span class="p">,</span> <span class="n">p_spearman_total</span> <span class="o">=</span> <span class="n">spearmanr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;human_avg_score&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;model_2_total_score&#39;</span><span class="p">])</span>
+
+<span class="c1"># Display the errors, correlations, and QWK for each trait and total scores</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Metrics for each trait and total scores:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trait 1 - MAE: </span><span class="si">{</span><span class="n">mae_trait1</span><span class="si">}</span><span class="s2">, RMSE: </span><span class="si">{</span><span class="n">rmse_trait1</span><span class="si">}</span><span class="s2">, QWK: </span><span class="si">{</span><span class="n">qwk_trait1</span><span class="si">}</span><span class="s2">, Pearson: </span><span class="si">{</span><span class="n">pearson_corr_trait1</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_pearson_trait1</span><span class="si">}</span><span class="s2">), Spearman: </span><span class="si">{</span><span class="n">spearman_corr_trait1</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_spearman_trait1</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trait 2 - MAE: </span><span class="si">{</span><span class="n">mae_trait2</span><span class="si">}</span><span class="s2">, RMSE: </span><span class="si">{</span><span class="n">rmse_trait2</span><span class="si">}</span><span class="s2">, QWK: </span><span class="si">{</span><span class="n">qwk_trait2</span><span class="si">}</span><span class="s2">, Pearson: </span><span class="si">{</span><span class="n">pearson_corr_trait2</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_pearson_trait2</span><span class="si">}</span><span class="s2">), Spearman: </span><span class="si">{</span><span class="n">spearman_corr_trait2</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_spearman_trait2</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trait 3 - MAE: </span><span class="si">{</span><span class="n">mae_trait3</span><span class="si">}</span><span class="s2">, RMSE: </span><span class="si">{</span><span class="n">rmse_trait3</span><span class="si">}</span><span class="s2">, QWK: </span><span class="si">{</span><span class="n">qwk_trait3</span><span class="si">}</span><span class="s2">, Pearson: </span><span class="si">{</span><span class="n">pearson_corr_trait3</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_pearson_trait3</span><span class="si">}</span><span class="s2">), Spearman: </span><span class="si">{</span><span class="n">spearman_corr_trait3</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_spearman_trait3</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trait 4 - MAE: </span><span class="si">{</span><span class="n">mae_trait4</span><span class="si">}</span><span class="s2">, RMSE: </span><span class="si">{</span><span class="n">rmse_trait4</span><span class="si">}</span><span class="s2">, QWK: </span><span class="si">{</span><span class="n">qwk_trait4</span><span class="si">}</span><span class="s2">, Pearson: </span><span class="si">{</span><span class="n">pearson_corr_trait4</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_pearson_trait4</span><span class="si">}</span><span class="s2">), Spearman: </span><span class="si">{</span><span class="n">spearman_corr_trait4</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_spearman_trait4</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total - MAE: </span><span class="si">{</span><span class="n">mae_total</span><span class="si">}</span><span class="s2">, RMSE: </span><span class="si">{</span><span class="n">rmse_total</span><span class="si">}</span><span class="s2">, QWK: </span><span class="si">{</span><span class="n">qwk_total</span><span class="si">}</span><span class="s2">, Pearson: </span><span class="si">{</span><span class="n">pearson_corr_total</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_pearson_total</span><span class="si">}</span><span class="s2">), Spearman: </span><span class="si">{</span><span class="n">spearman_corr_total</span><span class="si">}</span><span class="s2"> (p=</span><span class="si">{</span><span class="n">p_spearman_total</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Metrics for each trait and total scores:
+Trait 1 - MAE: 0.5376134889753567, RMSE: 0.8145085171522878, QWK: 0.31867337339749824, Pearson: 0.3384638131317651 (p=1.2297907107052097e-42), Spearman: 0.34697421650925736 (p=7.392288521495188e-45)
+Trait 2 - MAE: 0.5363164721141375, RMSE: 0.7910819398382585, QWK: 0.3233354524147979, Pearson: 0.3493440890315951 (p=1.729427625149266e-45), Spearman: 0.34369350014856953 (p=5.40990719273753e-44)
+Trait 3 - MAE: 0.4896238651102464, RMSE: 0.7498378553650925, QWK: 0.18681274565978234, Pearson: 0.25094128627430917 (p=1.425897933881876e-23), Spearman: 0.25146567554366195 (p=1.1459454494924987e-23)
+Trait 4 - MAE: 0.8015564202334631, RMSE: 1.0230799611975063, QWK: 0.13594430688428794, Pearson: 0.25393610969555047 (p=4.064350979405521e-24), Spearman: 0.2514760957008236 (p=1.1409732359033798e-23)
+Total - MAE: 2.1621271076523993, RMSE: 2.825444881926411, QWK: 0.34401758979281116, Pearson: 0.4367091951130355 (p=8.033603684084239e-73), Spearman: 0.4302080084900532 (p=1.7067506721913084e-70)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="comparative-analysis-of-model-1-and-model-2-performance">
+<h2>Comparative Analysis of Model 1 and Model 2 Performance<a class="headerlink" href="#comparative-analysis-of-model-1-and-model-2-performance" title="Link to this heading">#</a></h2>
+<section id="id13">
+<h3>Overview<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<p>This section provides a detailed comparison between Model 1 and Model 2 in terms of their ability to mirror human scores.</p>
+</section>
+<section id="error-metrics-comparison">
+<h3>Error Metrics Comparison<a class="headerlink" href="#error-metrics-comparison" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>MAE and RMSE</strong>:</p>
+<ul>
+<li><p><strong>Model 1</strong> tends to show lower MAE and RMSE across individual traits, indicating more precise predictions that align closely with human assessments.</p></li>
+<li><p><strong>Model 2</strong> displays higher errors, particularly in total scores, suggesting less accuracy in capturing the overall human scoring pattern.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id14">
+<h3>Correlation Analysis<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Pearson and Spearman Correlations</strong>:</p>
+<ul>
+<li><p>Both models show moderate correlations with human scores. <strong>Model 1</strong> generally achieves slightly higher correlations across all traits and total scores, indicating more consistency.</p></li>
+<li><p><strong>Model 2</strong>, while showing decent correlations, lacks the stability of Model 1, with more variation in correlation values across different traits.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="quadratic-weighted-kappa-qwk-analysis">
+<h3>Quadratic Weighted Kappa (QWK) Analysis<a class="headerlink" href="#quadratic-weighted-kappa-qwk-analysis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>QWK Scores</strong>:</p>
+<ul>
+<li><p><strong>Model 1</strong> achieves a higher QWK in most traits and overall scores compared to Model 2, indicating a better agreement with human scorers when adjusting for chance. This highlights Model 1’s superior ability to consistently replicate human judgment patterns across multiple traits.</p></li>
+<li><p><strong>Model 2</strong> has lower QWK scores, particularly in traits that are crucial for accurate performance assessment, reflecting its overall weaker alignment with human rating nuances.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id15">
+<h3>Conclusion<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<p>Considering the lower error metrics, higher correlation coefficients, and notably better Quadratic Weighted Kappa scores, <strong>Model 1 demonstrates a more robust and consistent performance</strong> in approximating human scores compared to Model 2. Although neither model achieves perfect alignment with human raters, Model 1 is distinctly preferable for applications requiring high fidelity to human scoring.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Learnosity Automated Student Assessment Assement</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="improve_the_models.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How to Improve The Models</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-plan">Analysis plan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">Import the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-prep-and-eda">Data Prep and EDA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-combined-data-frame">Create Combined Data Frame.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#human-raters-consistency-analysis">Human Raters Consistency Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-findings">Key Findings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-metrics">Correlation Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-weighted-kappa">Quadratic Weighted Kappa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-analysis">Visual Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-scores-consistency-analysis">Model Scores Consistency Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Objective</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Key Findings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Correlation Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Visual Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-human-rated-scores-versus-model-scores">Comparing Human-Rated Scores Versus Model Scores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Analysis Plan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Objective</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-of-model-1-performance-against-human-scores">Evaluation of Model 1 Performance Against Human Scores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-metrics">Error Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-analysis">Correlation Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-weighted-kappa-analysis">Quadratic Weighted Kappa Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-of-model-2-performance-against-human-scores">Evaluation of Model 2 Performance Against Human Scores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Error Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Correlation Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Quadratic Weighted Kappa Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-analysis-of-model-1-and-model-2-performance">Comparative Analysis of Model 1 and Model 2 Performance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-metrics-comparison">Error Metrics Comparison</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Correlation Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-weighted-kappa-qwk-analysis">Quadratic Weighted Kappa (QWK) Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sean McCrossan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

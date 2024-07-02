@@ -1,0 +1,199 @@
+Traceback (most recent call last):
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from torch.optim import AdamW
+from torch.optim.lr_scheduler import StepLR
+from torch.nn import MSELoss
+from torch.cuda.amp import GradScaler, autocast
+import numpy as np
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = EssayScoringModel().to(device)
+optimizer = AdamW(model.parameters(), lr=1e-4)  # Using AdamW optimizer with a different learning rate
+criterion = MSELoss()
+scaler = GradScaler()  # For mixed precision training
+
+scheduler = StepLR(optimizer, step_size=10, gamma=0.1)  # Decays the learning rate of each parameter group by gamma every step_size epochs
+
+best_loss = float('inf')
+patience = 5  # Number of epochs to wait for improvement before stopping
+no_improvement_epochs = 0
+improvement_threshold = 1e-4  # Minimum change to be considered an improvement
+accumulation_steps = 4
+optimizer.zero_grad()
+losses = []  # List to store the average loss of each epoch
+
+for epoch in range(50):
+    model.train()
+    total_loss = 0
+    for i, (essays, scores) in enumerate(train_loader):
+        essays = essays.to(device)
+        scores = scores.to(device).float()
+
+        with autocast():
+            predictions = model(essays).squeeze()
+            loss = criterion(predictions, scores) / accumulation_steps
+
+        scaler.scale(loss).backward()
+
+        if (i + 1) % accumulation_steps == 0:
+            scaler.step(optimizer)
+            scaler.update()
+            optimizer.zero_grad()
+
+        total_loss += loss.item() * accumulation_steps
+
+    avg_loss = total_loss / len(train_loader)
+    losses.append(avg_loss)  # Append the average loss
+    scheduler.step()  # Adjust the learning rate based on the number of epochs
+    print(f"Epoch {epoch}, Loss: {avg_loss}, LR: {scheduler.get_last_lr()}")
+
+    if avg_loss < best_loss - improvement_threshold:
+        best_loss = avg_loss
+        no_improvement_epochs = 0
+        torch.save(model.state_dict(), 'essay_scoring_model.pth')
+        print("Saved improved model with loss: {:.4f}".format(best_loss))
+    else:
+        no_improvement_epochs += 1
+
+    if no_improvement_epochs >= patience:
+        print(f"Early stopping triggered after {epoch + 1} epochs")
+        break
+
+------------------
+
+----- stderr -----
+/Users/seanmccrossan/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/torch/amp/grad_scaler.py:131: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+----- stderr -----
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py", line 126, in _main
+    self = reduction.pickle.load(from_parent)
+AttributeError: Can't get attribute 'EssayDataset' on <module '__main__' (built-in)>
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py", line 126, in _main
+    self = reduction.pickle.load(from_parent)
+AttributeError: Can't get attribute 'EssayDataset' on <module '__main__' (built-in)>
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py", line 126, in _main
+    self = reduction.pickle.load(from_parent)
+AttributeError: Can't get attribute 'EssayDataset' on <module '__main__' (built-in)>
+----- stderr -----
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/seanmccrossan/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/spawn.py", line 126, in _main
+    self = reduction.pickle.load(from_parent)
+AttributeError: Can't get attribute 'EssayDataset' on <module '__main__' (built-in)>
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mRuntimeError[0m                              Traceback (most recent call last)
+File [0;32m~/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/torch/utils/data/dataloader.py:1133[0m, in [0;36m_MultiProcessingDataLoaderIter._try_get_data[0;34m(self, timeout)[0m
+[1;32m   1132[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 1133[0m     data [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_data_queue[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[43mtimeout[49m[38;5;241;43m=[39;49m[43mtimeout[49m[43m)[49m
+[1;32m   1134[0m     [38;5;28;01mreturn[39;00m ([38;5;28;01mTrue[39;00m, data)
+
+File [0;32m~/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/queues.py:113[0m, in [0;36mQueue.get[0;34m(self, block, timeout)[0m
+[1;32m    112[0m timeout [38;5;241m=[39m deadline [38;5;241m-[39m time[38;5;241m.[39mmonotonic()
+[0;32m--> 113[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_poll[49m[43m([49m[43mtimeout[49m[43m)[49m:
+[1;32m    114[0m     [38;5;28;01mraise[39;00m Empty
+
+File [0;32m~/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/connection.py:262[0m, in [0;36m_ConnectionBase.poll[0;34m(self, timeout)[0m
+[1;32m    261[0m [38;5;28mself[39m[38;5;241m.[39m_check_readable()
+[0;32m--> 262[0m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_poll[49m[43m([49m[43mtimeout[49m[43m)[49m
+
+File [0;32m~/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/connection.py:429[0m, in [0;36mConnection._poll[0;34m(self, timeout)[0m
+[1;32m    428[0m [38;5;28;01mdef[39;00m [38;5;21m_poll[39m([38;5;28mself[39m, timeout):
+[0;32m--> 429[0m     r [38;5;241m=[39m [43mwait[49m[43m([49m[43m[[49m[38;5;28;43mself[39;49m[43m][49m[43m,[49m[43m [49m[43mtimeout[49m[43m)[49m
+[1;32m    430[0m     [38;5;28;01mreturn[39;00m [38;5;28mbool[39m(r)
+
+File [0;32m~/.pyenv/versions/3.10.4/lib/python3.10/multiprocessing/connection.py:936[0m, in [0;36mwait[0;34m(object_list, timeout)[0m
+[1;32m    935[0m [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
+[0;32m--> 936[0m     ready [38;5;241m=[39m [43mselector[49m[38;5;241;43m.[39;49m[43mselect[49m[43m([49m[43mtimeout[49m[43m)[49m
+[1;32m    937[0m     [38;5;28;01mif[39;00m ready:
+
+File [0;32m~/.pyenv/versions/3.10.4/lib/python3.10/selectors.py:416[0m, in [0;36m_PollLikeSelector.select[0;34m(self, timeout)[0m
+[1;32m    415[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 416[0m     fd_event_list [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_selector[49m[38;5;241;43m.[39;49m[43mpoll[49m[43m([49m[43mtimeout[49m[43m)[49m
+[1;32m    417[0m [38;5;28;01mexcept[39;00m [38;5;167;01mInterruptedError[39;00m:
+
+File [0;32m~/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py:66[0m, in [0;36m_set_SIGCHLD_handler.<locals>.handler[0;34m(signum, frame)[0m
+[1;32m     63[0m [38;5;28;01mdef[39;00m [38;5;21mhandler[39m(signum, frame):
+[1;32m     64[0m     [38;5;66;03m# This following call uses `waitid` with WNOHANG from C side. Therefore,[39;00m
+[1;32m     65[0m     [38;5;66;03m# Python can still get and update the process status successfully.[39;00m
+[0;32m---> 66[0m     [43m_error_if_any_worker_fails[49m[43m([49m[43m)[49m
+[1;32m     67[0m     [38;5;28;01mif[39;00m previous_handler [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+[0;31mRuntimeError[0m: DataLoader worker (pid 9275) exited unexpectedly with exit code 1. Details are lost due to multiprocessing. Rerunning with num_workers=0 may give better error trace.
+
+The above exception was the direct cause of the following exception:
+
+[0;31mRuntimeError[0m                              Traceback (most recent call last)
+Cell [0;32mIn[5], line 26[0m
+[1;32m     24[0m model[38;5;241m.[39mtrain()
+[1;32m     25[0m total_loss [38;5;241m=[39m [38;5;241m0[39m
+[0;32m---> 26[0m [38;5;28;01mfor[39;00m i, (essays, scores) [38;5;129;01min[39;00m [38;5;28menumerate[39m(train_loader):
+[1;32m     27[0m     essays [38;5;241m=[39m essays[38;5;241m.[39mto(device)
+[1;32m     28[0m     scores [38;5;241m=[39m scores[38;5;241m.[39mto(device)[38;5;241m.[39mfloat()
+
+File [0;32m~/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/torch/utils/data/dataloader.py:631[0m, in [0;36m_BaseDataLoaderIter.__next__[0;34m(self)[0m
+[1;32m    628[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_sampler_iter [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    629[0m     [38;5;66;03m# TODO(https://github.com/pytorch/pytorch/issues/76750)[39;00m
+[1;32m    630[0m     [38;5;28mself[39m[38;5;241m.[39m_reset()  [38;5;66;03m# type: ignore[call-arg][39;00m
+[0;32m--> 631[0m data [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_next_data[49m[43m([49m[43m)[49m
+[1;32m    632[0m [38;5;28mself[39m[38;5;241m.[39m_num_yielded [38;5;241m+[39m[38;5;241m=[39m [38;5;241m1[39m
+[1;32m    633[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_dataset_kind [38;5;241m==[39m _DatasetKind[38;5;241m.[39mIterable [38;5;129;01mand[39;00m \
+[1;32m    634[0m         [38;5;28mself[39m[38;5;241m.[39m_IterableDataset_len_called [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m \
+[1;32m    635[0m         [38;5;28mself[39m[38;5;241m.[39m_num_yielded [38;5;241m>[39m [38;5;28mself[39m[38;5;241m.[39m_IterableDataset_len_called:
+
+File [0;32m~/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/torch/utils/data/dataloader.py:1329[0m, in [0;36m_MultiProcessingDataLoaderIter._next_data[0;34m(self)[0m
+[1;32m   1326[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_process_data(data)
+[1;32m   1328[0m [38;5;28;01massert[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_shutdown [38;5;129;01mand[39;00m [38;5;28mself[39m[38;5;241m.[39m_tasks_outstanding [38;5;241m>[39m [38;5;241m0[39m
+[0;32m-> 1329[0m idx, data [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_get_data[49m[43m([49m[43m)[49m
+[1;32m   1330[0m [38;5;28mself[39m[38;5;241m.[39m_tasks_outstanding [38;5;241m-[39m[38;5;241m=[39m [38;5;241m1[39m
+[1;32m   1331[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_dataset_kind [38;5;241m==[39m _DatasetKind[38;5;241m.[39mIterable:
+[1;32m   1332[0m     [38;5;66;03m# Check for _IterableDatasetStopIteration[39;00m
+
+File [0;32m~/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/torch/utils/data/dataloader.py:1295[0m, in [0;36m_MultiProcessingDataLoaderIter._get_data[0;34m(self)[0m
+[1;32m   1291[0m     [38;5;66;03m# In this case, `self._data_queue` is a `queue.Queue`,. But we don't[39;00m
+[1;32m   1292[0m     [38;5;66;03m# need to call `.task_done()` because we don't use `.join()`.[39;00m
+[1;32m   1293[0m [38;5;28;01melse[39;00m:
+[1;32m   1294[0m     [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
+[0;32m-> 1295[0m         success, data [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_try_get_data[49m[43m([49m[43m)[49m
+[1;32m   1296[0m         [38;5;28;01mif[39;00m success:
+[1;32m   1297[0m             [38;5;28;01mreturn[39;00m data
+
+File [0;32m~/.pyenv/versions/3.10.4/envs/learnosity/lib/python3.10/site-packages/torch/utils/data/dataloader.py:1146[0m, in [0;36m_MultiProcessingDataLoaderIter._try_get_data[0;34m(self, timeout)[0m
+[1;32m   1144[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(failed_workers) [38;5;241m>[39m [38;5;241m0[39m:
+[1;32m   1145[0m     pids_str [38;5;241m=[39m [38;5;124m'[39m[38;5;124m, [39m[38;5;124m'[39m[38;5;241m.[39mjoin([38;5;28mstr[39m(w[38;5;241m.[39mpid) [38;5;28;01mfor[39;00m w [38;5;129;01min[39;00m failed_workers)
+[0;32m-> 1146[0m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m([38;5;124mf[39m[38;5;124m'[39m[38;5;124mDataLoader worker (pid(s) [39m[38;5;132;01m{[39;00mpids_str[38;5;132;01m}[39;00m[38;5;124m) exited unexpectedly[39m[38;5;124m'[39m) [38;5;28;01mfrom[39;00m [38;5;21;01me[39;00m
+[1;32m   1147[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(e, queue[38;5;241m.[39mEmpty):
+[1;32m   1148[0m     [38;5;28;01mreturn[39;00m ([38;5;28;01mFalse[39;00m, [38;5;28;01mNone[39;00m)
+
+[0;31mRuntimeError[0m: DataLoader worker (pid(s) 9275) exited unexpectedly
+
