@@ -1,0 +1,9 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: human_score_vs_model_compare.ipynb
+- file: improve_the_models.ipynb
+- file: questions_and_references
